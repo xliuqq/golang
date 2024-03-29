@@ -7,6 +7,10 @@ import (
 
 // go run -race volatile.go
 
+/*
+一读多写的并发场景，必须要用 atomic 操作（类似 Java 的 volatile）
+*/
+
 type Count struct {
 	num int32
 }
