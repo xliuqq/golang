@@ -16,6 +16,7 @@ func registFunc(mux *http.ServeMux) {
 	mux.HandleFunc("/event_stream", eventStream)
 }
 
+// for production, can use https://github.com/alexandrevicenzi/go-sse
 func eventStream(w http.ResponseWriter, r *http.Request) {
 	method := r.Method
 
@@ -32,7 +33,6 @@ func eventStream(w http.ResponseWriter, r *http.Request) {
 		}
 
 		// TODO: should take over the http connection and keep it in memory
-		// for production, can use https://github.com/alexandrevicenzi/go-sse
 		ticker := time.NewTicker(2 * time.Second)
 		defer ticker.Stop()
 
