@@ -5,7 +5,8 @@ import (
 	"time"
 )
 
-// go run -race volatile.go
+// 一写多读的场景，因为 Go 中没有 volatile 关键字，所以需要采用 Atomic 机制。
+// `go run -race volatile.go` 可以分析出是否有数据竞争。
 
 type Count struct {
 	num int32
