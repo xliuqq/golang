@@ -1,4 +1,7 @@
 # GoLang 语言学习
+## 基础
+
+- [测试函数闭包: TestClosure](./basic/main_test.go)
 
 ## 并发
 
